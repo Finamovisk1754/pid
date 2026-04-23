@@ -1,0 +1,96 @@
+{
+  "project_name": "Dashboard PID - Grupo 9 C213",
+  "design_system": {
+    "theme": "light",
+    "archetype": "4 (Swiss & High-Contrast)",
+    "philosophy": "Modern Scientific / Industrial Control Room. Function over form. Data is the primary visual. Zero decorative gradients. Extreme clarity.",
+    "typography": {
+      "primary_family": "IBM Plex Sans, sans-serif",
+      "mono_family": "IBM Plex Mono, monospace",
+      "hierarchy": {
+        "h1": "text-2xl font-semibold tracking-tight text-slate-900",
+        "h2": "text-lg font-medium tracking-tight text-slate-800",
+        "h3": "text-sm font-medium text-slate-700 uppercase tracking-widest",
+        "body": "text-sm text-slate-600",
+        "metrics_value": "font-mono text-3xl font-medium tracking-tighter text-slate-900",
+        "metrics_label": "text-xs font-semibold uppercase tracking-[0.15em] text-slate-500"
+      }
+    },
+    "colors": {
+      "background": "#F8FAFC",
+      "surface": "#FFFFFF",
+      "border": "#E2E8F0",
+      "text": {
+        "primary": "#0F172A",
+        "secondary": "#64748B",
+        "tertiary": "#94A3B8"
+      },
+      "brand": {
+        "primary": "#000000",
+        "primary_hover": "#333333",
+        "accent": "#2563EB"
+      },
+      "chart": {
+        "process_variable": "#2563EB",
+        "setpoint": "#111827",
+        "open_loop": "#64748B",
+        "markers": "#EF4444",
+        "grid": "#F1F5F9"
+      },
+      "status": {
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444"
+      }
+    },
+    "spacing_and_layout": {
+      "strategy": "Control Room Grid (Dense, Data-focused)",
+      "container": "max-w-7xl mx-auto p-4 md:p-8",
+      "bento_grid": "grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-4 md:gap-6",
+      "surface_style": "GRID BORDERS - flat backgrounds, 1px solid border (#E2E8F0), rounded-none or very subtle rounded-sm (max 4px). No soft drop shadows, use sharp structural hierarchy."
+    }
+  },
+  "components": {
+    "tabs": {
+      "style": "Minimalist underline style. Active tab gets a 2px solid black bottom border. No pills or bubbles.",
+      "usage": "Primary navigation between: 1-Identificação, 2-Controle PID, 3-Gráficos"
+    },
+    "cards": {
+      "style": "border border-slate-200 bg-white rounded-sm p-5",
+      "header": "Border-bottom 1px solid slate-100 pb-3 mb-4"
+    },
+    "inputs_sliders": {
+      "style": "Sharp corners, high contrast borders (border-slate-300 focus:border-black). Sliders should use stark black/blue tracks.",
+      "layout": "Stack with clear mono-spaced value outputs next to labels."
+    },
+    "charts": {
+      "library": "recharts",
+      "style": "Clean white background. Hide outer axis lines. Use dashed light-gray lines for CartesianGrid. Use ReferenceLine for SP (Setpoint) and markers (tr, ts).",
+      "features": "Must include Tooltip, Legend, and zoom/pan functionality. Export to PNG."
+    },
+    "buttons": {
+      "style": "Square (rounded-none or rounded-sm). Primary buttons are solid black with white text. Secondary are white with 1px black border."
+    }
+  },
+  "icons": {
+    "library": "@phosphor-icons/react",
+    "style": "Regular or Light weight, matching the technical aesthetic."
+  },
+  "image_urls": {
+    "notes": "No placeholder images required. The application relies entirely on data visualization and form controls."
+  },
+  "instructions_to_main_agent": [
+    "Initialize the React application and configure Tailwind CSS.",
+    "Install standard Shadcn UI components: tabs, slider, input, button, card, label.",
+    "Install 'recharts' for data visualization. This is critical for the Open/Closed loop step responses.",
+    "Install '@phosphor-icons/react' for precise UI iconography.",
+    "Install 'html2canvas' or similar to handle the Chart export to PNG functionality.",
+    "Structure the App with a top Header (Title: 'Controle Automático - C213', Group: 'Grupo 9') and a main Tabs component.",
+    "Tab 1 (Identificação): Interface to upload .mat file, plot the open-loop response, execute Smith Method, and display calculated parameters (K, τ, θ) and MSE in large monospace fonts.",
+    "Tab 2 (Controle PID): Interface with Sliders/Inputs for manual tuning (Kp, Ti, Td) and buttons for Auto-tuning (Ziegler-Nichols, ITAE).",
+    "Tab 3 (Gráficos): Large interactive charts comparing Open-Loop vs Closed-Loop. Include a Metrics Dashboard bento-box showing Rise Time (tr), Settling Time (ts), Overshoot (Mp), and Steady-State Error (ess).",
+    "Ensure every interactive element and data display has a 'data-testid' (e.g., 'data-testid=\"upload-dataset-button\"', 'data-testid=\"kp-slider\"').",
+    "Use Portuguese (pt-BR) for all text.",
+    "Override any Shadcn default border-radius to `rounded-sm` or `rounded-none` to fit the technical Swiss archetype."
+  ]
+}
