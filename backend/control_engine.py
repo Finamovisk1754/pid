@@ -278,10 +278,7 @@ def simulate_closed_loop(
         u_buffer[-1] = u_ctrl
         u_delayed = u_buffer[0]
 
-        # Planta FOPDT: tau*dy/dt = -y + k*(u_delayed - u_bias_0)  (assume y0 em regime com u_bias)
-        dy = (-y[i - 1] + k * (u_delayed - u_bias) + y0) / tau - y0 / tau
-        # Forma equivalente: dy/dt = (-(y - y0) + k*(u_delayed - u_bias)) / tau
-        # simplificando:
+        # Planta FOPDT: tau*dy/dt = -(y - y0) + k*(u_delayed - u_bias)
         dy = (-(y[i - 1] - y0) + k * (u_delayed - u_bias)) / tau
         y[i] = y[i - 1] + dy * dt
         u[i] = u_ctrl
