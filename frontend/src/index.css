@@ -109,3 +109,26 @@ code,
         border-bottom-color: inherit;
     }
 }
+
+/* Remove badge do Emergent */
+a[href*="emergent"],
+div:has(a[href*="emergent"]) {
+  display: none !important;
+}
+
+/* fallback agressivo */
+body > div:last-child {
+  display: none !important;
+}
+
+#emergent-badge {
+  display: none !important;
+}
+
+#emergent-badge,
+a#emergent-badge {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
