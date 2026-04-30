@@ -66,8 +66,8 @@ export default function Identification() {
         output: dataset.output,
       });
       setIdentification(res);
-      // Atualiza setpoint default = valor final teórico
-      setSetpoint(Number((res.y_inf).toFixed(3)));
+      // Atualiza setpoint default = amplitude do degrau experimental (convenção de projeto)
+      setSetpoint(Number((res.u_step).toFixed(3)));
       toast.success("Identificação de Smith concluída");
     } catch (e) {
       toast.error(`Erro na identificação: ${e?.response?.data?.detail || e.message}`);
@@ -101,13 +101,13 @@ export default function Identification() {
 
   const markers = useMemo(() => {
     if (!identification) return [];
-    const { t_step, theta, t1, t2, y0, y_inf } = identification;
+    const { theta, t1, t2, y0, y_inf } = identification;
     const y_t1 = y0 + 0.283 * (y_inf - y0);
     const y_t2 = y0 + 0.632 * (y_inf - y0);
     return [
-      { x: t_step + t1, y: y_t1, label: "28.3%", color: "#EF4444" },
-      { x: t_step + t2, y: y_t2, label: "63.2%", color: "#EF4444" },
-      { x: t_step + theta, y: y0, label: "θ", color: "#F59E0B" },
+      { x: t1, y: y_t1, label: "28.3%", color: "#EF4444" },
+      { x: t2, y: y_t2, label: "63.2%", color: "#EF4444" },
+      { x: theta, y: y0, label: "θ", color: "#F59E0B" },
     ];
   }, [identification]);
 

@@ -69,7 +69,7 @@ export default function PIDControl() {
     setSimulating(true);
     try {
       // Tempo de simulação: ~8x tau + theta, mínimo 150s
-      const t_sim = Math.max(150, 8 * identification.tau + 2 * identification.theta);
+      const t_sim = Math.max(200, 10 * identification.tau + 2 * identification.theta);
       const res = await simulateSystem({
         k: identification.k,
         tau: identification.tau,
@@ -80,8 +80,9 @@ export default function PIDControl() {
         sp: setpoint,
         y0: identification.y0,
         u_bias: identification.u0,
+        u_step_value: identification.u_step, // malha aberta reproduz o degrau experimental
         t_sim,
-        dt: Math.max(0.05, t_sim / 3000),
+        dt: 0.05,
       });
       setSimulation(res);
     } catch (e) {

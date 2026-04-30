@@ -164,16 +164,18 @@ def smith_identification(
                 return float(t1 + (target - y1) * (t2 - t1) / (y2 - y1))
         return float(t_after[-1])
 
-    t1 = crossing(y_t1_target) - t_step
-    t2 = crossing(y_t2_target) - t_step
+    t1 = crossing(y_t1_target)
+    t2 = crossing(y_t2_target)
 
     tau = 1.5 * (t2 - t1)
     theta = t2 - tau
     if theta < 0:
         theta = max(0.0, t1 * 0.5)
 
-    # Resposta do modelo (para MSE e exibição)
-    y_model = fopdt_step_response(t, k, tau, theta, u0, u_step, t_step, y0)
+    # Resposta do modelo (para MSE e exibição). A convenção aqui é: theta absorve
+    # qualquer "tempo morto" antes do degrau, portanto o modelo parte de t_step=0
+    # no eixo absoluto do experimento.
+    y_model = fopdt_step_response(t, k, tau, theta, u0, u_step, 0.0, y0)
     mse = float(np.mean((y - y_model) ** 2))
 
     return {
@@ -254,7 +256,9 @@ def simulate_closed_loop(
     u_buffer = np.full(delay_steps + 1, u_bias, dtype=float)
 
     integral = 0.0
-    e_prev = sp - y0
+    # Inicialização textbook: e_prev=0 (gera "derivative kick" quando o SP salta,
+    # comportamento clássico do PID posicional usado como referência).
+    e_prev = 0.0
     Ti_safe = Ti if Ti > 1e-9 else 1e9  # evita divisão por zero (sem I se Ti==0)
 
     for i in range(1, n):
