@@ -35,8 +35,10 @@ Dashboard web para **identificação de sistemas** e **simulação de controle P
 - shadcn/ui
 - Phosphor Icons
 
-**Back-end (esperado)**
+**Back-end**
 - FastAPI
+- Numpy
+- Scipy
 
 ---
 ## ▶️ Como executar
