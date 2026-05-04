@@ -4,6 +4,17 @@ Dashboard web para **identificação de sistemas** e **simulação de controle P
 
 ---
 
+##🎯 Objetivo
+
+Aplicar conceitos de:
+
+Identificação de sistemas
+Controle PID
+Métodos clássicos (Smith, Ziegler-Nichols, ITAE)
+Visualização de dados experimentais
+
+---
+
 ## 📌 Funcionalidades
 
 ### 🔹 Identificação do Sistema
@@ -138,7 +149,9 @@ PID/
 │   ├── public/
 │   └── package.json
 ```
-📊 Análise dos Resultados
+---
+
+## 📊 Análise dos Resultados
 
 A identificação do sistema apresentou comportamento consistente com um modelo de primeira ordem com atraso.
 
@@ -156,18 +169,14 @@ O método ITAE apresenta resposta mais suave e menor oscilação
 
 De forma geral, o modelo identificado é adequado para análise e controle do sistema.
 
-🎯 Objetivo
+---
 
-Aplicar conceitos de:
-
-Identificação de sistemas
-Controle PID
-Métodos clássicos (Smith, Ziegler-Nichols, ITAE)
-Visualização de dados experimentais
-👨‍💻 Autores
+##👨‍💻 Autores
 
 Matheus Finamor
 
-📜 Licença
+---
+
+##📜 Licença
 
 Uso acadêmico.
