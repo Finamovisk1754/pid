@@ -171,12 +171,12 @@ De forma geral, o modelo identificado é adequado para análise e controle do si
 
 ---
 
-##👨‍💻 Autores
+## 👨‍💻 Autores
 
 Matheus Finamor
 
 ---
 
-##📜 Licença
+## 📜 Licença
 
 Uso acadêmico.
