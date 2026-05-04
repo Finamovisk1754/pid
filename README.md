@@ -47,6 +47,7 @@ Dashboard web para **identificação de sistemas** e **simulação de controle P
 - npm install
 - npm start
 
+---
 ## 🎯 Objetivo
 
 Aplicar conceitos de:
@@ -55,3 +56,13 @@ Identificação de sistemas
 Controle PID
 Métodos clássicos (Smith, Ziegler-Nichols, ITAE)
 Visualização de dados experimentais
+
+---
+## 👨‍💻 Autores
+Matheus Finamor
+
+## 📜 Licença
+
+Uso acadêmico.
+
+
