@@ -60,6 +60,26 @@ Métodos clássicos (Smith, Ziegler-Nichols, ITAE)
 Visualização de dados experimentais
 
 ---
+
+## Análise dos Resultados
+
+A identificação do sistema apresentou comportamento consistente com um modelo de primeira ordem com atraso.
+
+Os parâmetros estimados (K, τ, θ) permitiram uma boa aproximação da dinâmica real do sistema.
+
+Observou-se que:
+- O modelo acompanha a tendência da resposta real
+- Existe pequeno erro inicial devido ao atraso
+- O tempo de subida e acomodação são coerentes com o sistema físico
+
+Na aplicação do controle PID:
+- O sistema apresentou redução significativa do erro
+- O overshoot depende dos ganhos escolhidos
+- Ajustes via Ziegler-Nichols forneceram resposta rápida, porém com leve oscilação
+
+De forma geral, o modelo é adequado para análise e controle do sistema.
+
+---
 ## 👨‍💻 Autores
 Matheus Finamor
 
