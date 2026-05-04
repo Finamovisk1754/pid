@@ -4,7 +4,7 @@ Dashboard web para **identificação de sistemas** e **simulação de controle P
 
 ---
 
-##🎯 Objetivo
+## 🎯 Objetivo
 
 Aplicar conceitos de:
 
@@ -133,22 +133,17 @@ O desempenho dos modelos e controladores é avaliado por:
 cd backend
 pip install -r requirements.txt
 uvicorn server:app --reload
-Frontend
+
+```
+### Frontend
+```bash
+
 cd frontend
 npm install
 npm start
-📁 Estrutura do Projeto
-PID/
-├── backend/
-│   ├── datasets/
-│   ├── control_engine.py
-│   ├── server.py
-│   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
+
 ```
+
 ---
 
 ## 📊 Análise dos Resultados
