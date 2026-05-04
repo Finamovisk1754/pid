@@ -39,6 +39,7 @@ React
 TailwindCSS
 shadcn/ui
 Phosphor Icons
+
 Back-end
 FastAPI
 NumPy
@@ -57,6 +58,7 @@ Responsável por:
 Upload do dataset
 Entrada de parâmetros
 Visualização dos gráficos
+
 🔹 Backend (FastAPI)
 
 Responsável por:
